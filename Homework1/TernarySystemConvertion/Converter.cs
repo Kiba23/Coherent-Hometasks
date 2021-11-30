@@ -10,11 +10,11 @@ namespace TernarySystemConvertion
             while (number != 0)
             {
                 // Main convertion algorithm
-                int x = number % 3;
+                int ternaryNum = number % 3;
                 number /= 3;
 
                 // Appending the values
-                result += x;
+                result += ternaryNum;
             }
 
             // Insert this line if you want to get proper ternary number, because it's shown in reverse.
