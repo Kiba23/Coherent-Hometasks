@@ -4,14 +4,14 @@ namespace TernarySystemConvertion
 {
     public class Converter
     {
-        public bool IsTernaryHasProperNumber(int N)
+        public bool IsTernaryHasProperNumber(int number)
         {
             string result = "";
-            while (N != 0)
+            while (number != 0)
             {
                 // Main convertion algorithm
-                int x = N % 3;
-                N /= 3;
+                int x = number % 3;
+                number /= 3;
 
                 // Appending the values
                 result += x;
