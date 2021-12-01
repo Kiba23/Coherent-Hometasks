@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace TernarySystemConvertion
 {
     class Program
@@ -21,15 +20,13 @@ namespace TernarySystemConvertion
                 for (int i = a; i <= b; i++)
                 {
                     if (converter.IsTernaryHasProperNumber(i))
-                        Console.WriteLine($"\nNumber containing exactly two 2's in their ternary number is: {i}.");
+                        Messages.ResultNumberOutput(i);
                 }
             }
             else
             {
-                Console.WriteLine("Enter a proper positive values.");
+                Messages.WrongValuesOutput();
             }
-
-            Console.WriteLine("\n");
         }
     }
 }

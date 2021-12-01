@@ -19,5 +19,15 @@ namespace TernarySystemConvertion
 
             return new string[] { inputFirst, inputSecond };
         }
+
+        public static void ResultNumberOutput(int num)
+        {
+            Console.WriteLine($"\nNumber containing exactly two 2's in their ternary number is: {num}.");
+        }
+
+        public static void WrongValuesOutput()
+        {
+            Console.WriteLine("Enter a proper positive values.");
+        }
     }
 }
