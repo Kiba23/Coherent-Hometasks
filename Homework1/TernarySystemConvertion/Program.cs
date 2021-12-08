@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace TernarySystemConvertion
 {
     class Program
@@ -6,12 +7,15 @@ namespace TernarySystemConvertion
         static void Main(string[] args)
         {
             // Entry of application
-            Messages.HelloMessage();
-            string[] inputs = Messages.InputMessage();
+            Console.WriteLine(Messages.Entry);
+            Console.WriteLine(Messages.AskFirstNumber);
+            var inputFirst = Console.ReadLine();
+            Console.WriteLine(Messages.AskSecondNumber);
+            var inputSecond = Console.ReadLine();
 
             // Parsing
-            var a = ParseHelper.IntTryParse(inputs[0]);
-            var b = ParseHelper.IntTryParse(inputs[1]);
+            var a = int.Parse(inputFirst);
+            var b = int.Parse(inputSecond);
 
             if (a <= b && a > 0 && b > 0)
             {
@@ -20,12 +24,14 @@ namespace TernarySystemConvertion
                 for (int i = a; i <= b; i++)
                 {
                     if (converter.IsTernaryHasProperNumber(i))
-                        Messages.ResultNumberOutput(i);
+                    {
+                        Console.WriteLine(Messages.ResultNumberOutput + i);
+                    }
                 }
             }
             else
             {
-                Messages.WrongValuesOutput();
+                Console.WriteLine(Messages.WrongValuesOutput);
             }
         }
     }

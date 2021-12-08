@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace ArraySummator
 {
     class Program
@@ -6,18 +7,18 @@ namespace ArraySummator
         static void Main(string[] args)
         {
             // Console hello message
-            Messages.EntryMessage();
+            Console.WriteLine(Messages.Entry);
 
-            // Logic part functions with array
-            ArrayOperations arrayOperations = new ArrayOperations();
-            arrayOperations.GetArrayFromUser();
-            arrayOperations.CalculateNeededSum();
+            // Logic part functions with list
+            ListOperations listOperations = new ListOperations();
+            var valuesFromUser = listOperations.GetListFromUser();
+            var sum = listOperations.CalculateNeededSum(valuesFromUser);
 
-            // Original array output
-            Messages.OriginalArrayMessage(arrayOperations);
+            // Original list output
+            Console.Write(Messages.OriginalListOutput + listOperations.DisplayList(valuesFromUser));
 
             // Sum output
-            Messages.SumOfArrayMessage(arrayOperations);
+            Console.WriteLine(Messages.SumOutput + sum);
         }
     }
 }
