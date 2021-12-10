@@ -5,39 +5,36 @@ namespace ISBN
 {
     class Program
     {
+        private const int MaxInputDigits = 9;
+
         static void Main(string[] args)
         {
             // Entry messages
-            Console.WriteLine("Hello. This is an ISBN calculator =) \nEnter a nine digit string. ");
+            Console.WriteLine($"Hello. This is an ISBN calculator =) \nEnter a {MaxInputDigits} digit string. ");
             Console.WriteLine("\n\nNumbers: ");
             var inputStr = Console.ReadLine();
 
-            if (inputStr.Length == 9 && inputStr.All(char.IsDigit))
+            if (inputStr.Length == MaxInputDigits && inputStr.All(char.IsDigit))
             {
-                int sumOfNineDigits = 0;
+                int valueAfterExpression = 0;
+                int iterations = 0;
 
-                // Each digit checking and summing
-                foreach (var digit in inputStr)
+                // Calculating the expression, multiplying each input digit by sequence[10..1]
+                for (int i = 10; i > 1; i--)
                 {
-                    sumOfNineDigits += int.Parse(digit.ToString());
+                    valueAfterExpression += i * int.Parse(inputStr[iterations].ToString());
+                    iterations++;
                 }
 
-                int controlNum = 0;
-
-                // Iterating through 10 numbers to find the divisible of 11.
-                // The closest divisibles could be only in range of 10 numbers (from 81 - sum of
-                // maximum possible number of user's input)
-                for (int i = 0; i <= 10; i++)
+                // Calculating value needed to get Control Number
+                int valueToAdd = 0;
+                while ((valueAfterExpression + valueToAdd) % 11 != 0)
                 {
-                    if ((sumOfNineDigits + i) % 11 == 0)
-                    {
-                        controlNum = i;
-                        break;
-                    }
+                    valueToAdd++;
                 }
 
                 // Checking if control number equals 10 to write 'X' instead. And printing the message
-                Console.WriteLine($"ISBN number is - {inputStr}{(controlNum == 10 ? "X" : controlNum)}.\n");
+                Console.WriteLine($"ISBN number is - {inputStr}{(valueToAdd == 10 ? "X" : valueToAdd)}.\n");
             }
             else
             {

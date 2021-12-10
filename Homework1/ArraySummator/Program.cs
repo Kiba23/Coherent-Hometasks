@@ -15,7 +15,7 @@ namespace ArraySummator
             var sum = listOperations.CalculateNeededSum(valuesFromUser);
 
             // Original list output
-            Console.Write(Messages.OriginalListOutput + listOperations.DisplayList(valuesFromUser));
+            Console.Write(Messages.OriginalListOutput + listOperations.IntListAsString(valuesFromUser));
 
             // Sum output
             Console.WriteLine(Messages.SumOutput + sum);

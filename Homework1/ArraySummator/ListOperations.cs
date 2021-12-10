@@ -74,7 +74,7 @@ namespace ArraySummator
             return sum;
         }
 
-        public string DisplayList(List<int> valuesFromUser) // To output whole list inline
+        public string IntListAsString(List<int> valuesFromUser) // To output whole list inline
         {
             string originalArray = "";
             foreach (var element in valuesFromUser)

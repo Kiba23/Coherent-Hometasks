@@ -22,7 +22,7 @@ namespace TernarySystemConvertion
             //result = new string(result.Reverse().ToArray());
 
             // Checking if number has two 2's
-            return result.Where(a => a == '2').Count() == 2 ? true : false;
+            return result.Where(a => a == '2').Count() == 2;
         }
     }
 }
