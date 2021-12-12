@@ -6,7 +6,11 @@ namespace DiagonalMatrix
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var firstMatrix = new Matrix(0, 1, 2, 3, 4, -5, 100, 0);
+            var secondMatrix = new Matrix(0, 5, 6);
+            var thirdMatrix = new Matrix(0, 5, 6);
+
+            // TODO: 4'th task
         }
     }
 }
