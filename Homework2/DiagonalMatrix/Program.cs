@@ -10,7 +10,7 @@ namespace DiagonalMatrix
             var secondMatrix = new Matrix(0, 5, 6);
             var thirdMatrix = new Matrix(0, 5, 6);
 
-            // TODO: 4'th task
+            // TODO: 4'th task and test all the things
         }
     }
 }
