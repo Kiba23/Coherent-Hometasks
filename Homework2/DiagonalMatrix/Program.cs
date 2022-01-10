@@ -10,7 +10,16 @@ namespace DiagonalMatrix
             var secondMatrix = new Matrix(0, 5, 6);
             var thirdMatrix = new Matrix(0, 5, 6);
 
-            // TODO: 4'th task and test all the things
+            // Testing
+            Console.WriteLine(firstMatrix[6, 6]);
+            Console.WriteLine(firstMatrix.Track());
+            Console.WriteLine(secondMatrix.Equals(thirdMatrix));
+            Console.WriteLine(firstMatrix);
+            // Adding  matrices of the same size
+            Console.WriteLine(secondMatrix.AddMatrix(thirdMatrix));
+            // Adding matrices of the different size
+            Console.WriteLine(firstMatrix.AddMatrix(secondMatrix));
+            Console.WriteLine(secondMatrix.AddMatrix(firstMatrix));
         }
     }
 }

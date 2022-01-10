@@ -19,6 +19,22 @@ namespace DiagonalMatrix
             }
         }
 
+        public int this[int i, int j]
+        {
+            get
+            {
+                if (i < 0 || i >= Size || j < 0 || j >= Size)
+                {
+                    throw new System.Exception("Invalid indexes.");
+                }
+                if (i != j)
+                {
+                    return 0;
+                }
+                return DiagonalElements[i];
+            }
+        }
+
         public int Track()
         {
             int sum = 0;
