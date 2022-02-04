@@ -1,36 +1,42 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CoherentTrainingSystem
 {
-    public class Training : TrainingBase
+    public class Training
     {
-        public List<TrainingBase> LecturesAndPractice = new List<TrainingBase>();
+        public string Description { get; set; }
+        public List<TrainingBase> LecturesAndPractice { get; private set; } = new List<TrainingBase>();
+
+        public Training() { }
+        public Training(string description)
+        {
+            Description = description;
+        }
 
         public void Add(TrainingBase training)
         {
             LecturesAndPractice.Add(training);
         }
-
-        public void Add(List<TrainingBase> trainings)
+        public void Add(IEnumerable<TrainingBase> trainings)
         {
             LecturesAndPractice.AddRange(trainings);
         }
-
         public bool IsPractical()
         {
             return LecturesAndPractice.All(l => l is PracticalLesson);
         }
-
         public Training Clone()
         {
             // Creating a new object for a deep cloning
-            Training deepcopyTraining = new Training();
+            Training clone = new Training(this.Description);
 
             // Copying not the reference but the values itself
-            deepcopyTraining.LecturesAndPractice.AddRange(this.LecturesAndPractice);
-
-            return deepcopyTraining;
+            foreach (var item in this.LecturesAndPractice)
+            {
+                clone.Add(item.Clone());
+            }
+            return clone;
         }
     }
 }
