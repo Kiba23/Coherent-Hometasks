@@ -1,8 +1,16 @@
-﻿
+
 namespace CoherentTrainingSystem
 {
     public abstract class TrainingBase
     {
-        protected string Description = "";
+        public string Description { get; set; }
+
+        public TrainingBase() { }
+        public TrainingBase(string description) 
+        {
+            Description = description;
+        }
+
+        public abstract TrainingBase Clone();
     }
 }
