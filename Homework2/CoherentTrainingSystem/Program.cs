@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace CoherentTrainingSystem
@@ -7,8 +7,7 @@ namespace CoherentTrainingSystem
     {
         static void Main(string[] args)
         {
-            TrainingBase trainingBase = new Training();
-            var training = trainingBase as Training;
+            var training = new Training();
 
             List<TrainingBase> setOfTrainings = new List<TrainingBase>()
             {
