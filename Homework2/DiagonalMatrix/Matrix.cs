@@ -1,9 +1,10 @@
-﻿
+using System;
+
 namespace DiagonalMatrix
 {
     public class Matrix
     {
-        public int[] DiagonalElements { get; set; }
+        private int[] DiagonalElements { get; set; }
         public readonly int Size;
 
         public Matrix(params int[] inputElements)
@@ -23,11 +24,11 @@ namespace DiagonalMatrix
         {
             get
             {
-                if (i < 0 || i >= Size || j < 0 || j >= Size)
+                if (i < 0 || j < 0)
                 {
-                    throw new System.Exception("Invalid indexes.");
+                    throw new Exception("Invalid indexes.");
                 }
-                if (i != j)
+                if (i != j || i >= Size || j >= Size)
                 {
                     return 0;
                 }
@@ -61,6 +62,10 @@ namespace DiagonalMatrix
                     }
                     return true;
                 }
+            }
+            else if (obj is null)
+            {
+                throw new Exception("Object is null.");
             }
             return false;
         }
