@@ -1,0 +1,16 @@
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\bin\Debug\net5.0\PianoKeyboard.exe
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\bin\Debug\net5.0\PianoKeyboard.deps.json
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\bin\Debug\net5.0\PianoKeyboard.runtimeconfig.json
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\bin\Debug\net5.0\PianoKeyboard.runtimeconfig.dev.json
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\bin\Debug\net5.0\PianoKeyboard.dll
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\bin\Debug\net5.0\ref\PianoKeyboard.dll
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\bin\Debug\net5.0\PianoKeyboard.pdb
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.csproj.AssemblyReference.cache
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.AssemblyInfoInputs.cache
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.AssemblyInfo.cs
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.csproj.CoreCompileInputs.cache
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.dll
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\ref\PianoKeyboard.dll
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.pdb
+C:\Users\pocht\OneDrive\Documents\GitHub\Coherent-Hometasks\Homework3\PianoKeyboard\obj\Debug\net5.0\PianoKeyboard.genruntimeconfig.cache

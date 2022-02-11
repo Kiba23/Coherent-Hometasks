@@ -7,6 +7,7 @@ namespace PianoKeyboard.Enums
         B,
         C,
         D,
+        E,
         F,
         G
     }
