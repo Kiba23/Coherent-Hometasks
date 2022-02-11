@@ -13,7 +13,7 @@ namespace PianoKeyboard
             Key d = new Key(Notes.D, Accidentals.Flat, Octaves.First);
 
             Console.WriteLine(c.Equals(d));
-            //Console.WriteLine(c.CompareTo(d));
+            Console.WriteLine(c.CompareTo(d));
         }
     }
 }
