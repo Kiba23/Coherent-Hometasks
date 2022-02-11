@@ -8,3 +8,15 @@ Homework3/.vs/Homework3/v16/.suo
 Homework3/.vs/Homework3/v16/.suo
 *.dll
 *.pdb
+*.cache
+*.json
+*.props
+*.targets
+*.exe
+Homework3/PianoKeyboard/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+Homework3/PianoKeyboard/obj/Debug/net5.0/PianoKeyboard.AssemblyInfo.cs
+Homework3/PianoKeyboard/obj/Debug/net5.0/PianoKeyboard.GeneratedMSBuildEditorConfig.editorconfig
+Homework3/StackDataType/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+Homework3/StackDataType/obj/Debug/net5.0/StackDataType.AssemblyInfo.cs
+Homework3/StackDataType/obj/Debug/net5.0/StackDataType.csproj.FileListAbsolute.txt
+Homework3/StackDataType/obj/Debug/net5.0/StackDataType.GeneratedMSBuildEditorConfig.editorconfig
