@@ -3,7 +3,7 @@ namespace PianoKeyboard.Enums
 {
     public enum Octaves
     {
-        First = 1,
+        First,
         Second,
         Third,
         Fourth,

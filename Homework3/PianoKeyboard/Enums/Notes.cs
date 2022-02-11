@@ -3,7 +3,7 @@ namespace PianoKeyboard.Enums
 {
     public enum Notes
     {
-        A = 1,
+        A,
         B,
         C,
         D,

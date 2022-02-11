@@ -9,9 +9,9 @@ namespace PianoKeyboard
 {
     public class Key
     {
-        public Notes Note;
-        public Accidentals Accidental;
-        public Octaves Octave;
+        public Notes Note { get; private set; }
+        public Accidentals Accidental { get; private set; }
+        public Octaves Octave { get; private set; }
 
 
         public Key(Notes note, Accidentals accidental, Octaves octave)
@@ -35,26 +35,24 @@ namespace PianoKeyboard
             // Getting the equivalent key of input (caller) object, to check it
             var sameKey = KeyHelper.GetSameKey(this);
 
-            return false;
-
-            //if ()
-            //{
-
-            //}
-            //else if ()
-            //{
-
-            //}
-            //else
-            //{
-            //    return false;
-            //}
+            if (this.Note == compareKey.Note && this.Accidental == compareKey.Accidental && this.Octave == compareKey.Octave)
+            {
+                return true;
+            }
+            else if (sameKey.Note == compareKey.Note && sameKey.Accidental == compareKey.Accidental && sameKey.Octave == compareKey.Octave)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public override string ToString()
         {
             return $"{Note}" +
                 $"{(Accidental == Accidentals.Sharp ? "#" : "b")} " +
-                $"({(int)Octave})";
+                $"({(int)Octave + 1})";
         }
     }
 }
