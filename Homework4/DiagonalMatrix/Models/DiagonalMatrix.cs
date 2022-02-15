@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiagonalMatrix
 {
@@ -12,11 +8,11 @@ namespace DiagonalMatrix
         public readonly int Size;
 
 
-        public DiagonalMatrix(int size, params T[] elements)
+        public DiagonalMatrix(params T[] elements)
         {
-            if (size <= 0 || elements.Length != size)
+            if (elements.Length <= 0)
             {
-                throw new ArgumentException("Size isn't appropriate.");
+                throw new ArgumentException("Enter the proper amount of values.");
             }
 
             DiagonalElements = elements;
@@ -54,6 +50,16 @@ namespace DiagonalMatrix
                 throw new IndexOutOfRangeException("Incorrect index.");
             }
             return true;
+        }
+
+        public override string ToString()
+        {
+            string result = "";
+            foreach (var item in DiagonalElements)
+            {
+                result += item + " ";
+            }
+            return result;
         }
     }
 }
