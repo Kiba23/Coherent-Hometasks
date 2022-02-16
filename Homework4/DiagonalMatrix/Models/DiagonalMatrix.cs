@@ -4,6 +4,10 @@ namespace DiagonalMatrix
 {
     public class DiagonalMatrix<T>
     {
+        public delegate void ElementHandler(int indexI, int indexJ, T oldValue, T newValue);
+
+        public event ElementHandler ElementChanged;
+
         private T[] DiagonalElements { get; }
         public readonly int Size;
 
@@ -39,7 +43,13 @@ namespace DiagonalMatrix
                 {
                     return;
                 }
+                T oldValue = DiagonalElements[i];
                 DiagonalElements[i] = value;
+
+                if (ElementChanged != null && !(oldValue.Equals(value))) // Event occuring.
+                {
+                    ElementChanged(i, j, oldValue, value);
+                }
             }
         }
 
