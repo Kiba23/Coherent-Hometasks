@@ -41,7 +41,7 @@ namespace StackDataType
             doubleStack.Push(13.35654343);
 
             Console.WriteLine($"Initial Stack Data: {doubleStack}");
-            Console.WriteLine($"Stack Data after reverse and after clear : {doubleStack.ReverseAndClearStack()}, isEmpty? - {doubleStack.IsEmpty()}");
+            Console.WriteLine($"Stack Data after reverse : {doubleStack.Reverse()}, isEmpty? - {doubleStack.IsEmpty()}");
             #endregion
         }
     }
