@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparseMatrixOperations", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISBNbook", "ISBNbook\ISBNbook.csproj", "{490A1A17-7812-4753-90D7-553DE9D9DAFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employees", "Employees\Employees.csproj", "{C7B7A31E-5F50-4A0B-9ABA-6EE144A6FA13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vacations", "Employees\Vacations.csproj", "{C7B7A31E-5F50-4A0B-9ABA-6EE144A6FA13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

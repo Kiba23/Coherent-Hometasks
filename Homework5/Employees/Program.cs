@@ -1,6 +1,7 @@
 ﻿using System;
+using Vacations.Models;
 
-namespace Employees
+namespace Vacations
 {
     class Program
     {
