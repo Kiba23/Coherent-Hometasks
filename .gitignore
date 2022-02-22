@@ -29,3 +29,5 @@ Homework5/ISBNbook/obj/Debug/net5.0/ISBNbook.AssemblyInfo.cs
 *.editorconfig
 Homework5/SparseMatrix/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
 Homework5/SparseMatrix/obj/Debug/net5.0/SparseMatrix.AssemblyInfo.cs
+*.txt
+Homework5/SparseMatrix/obj/Debug/net5.0/SparseMatrixOperations.AssemblyInfo.cs
