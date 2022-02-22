@@ -7,7 +7,7 @@ namespace ISBNbook.Models
 {
     public class Catalogue
     {
-        Dictionary<string, Book> BookCollection = new Dictionary<string, Book>();
+        private Dictionary<string, Book> BookCollection = new Dictionary<string, Book>();
 
 
         public void AddBook(Book book, string isbn)

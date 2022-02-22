@@ -5,9 +5,9 @@ namespace ISBNbook.Models
 {
     public class Book
     {
-        string Title;
-        DateTime? PublicationDate;
-        List<string> Authors;
+        private string Title;
+        private DateTime? PublicationDate;
+        private List<string> Authors;
 
 
         public Book(string title, DateTime? publicationDate, params string[] authors)
