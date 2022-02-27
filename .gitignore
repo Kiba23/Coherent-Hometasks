@@ -20,3 +20,15 @@ Homework3/StackDataType/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttrib
 Homework3/StackDataType/obj/Debug/net5.0/StackDataType.AssemblyInfo.cs
 Homework3/StackDataType/obj/Debug/net5.0/StackDataType.csproj.FileListAbsolute.txt
 Homework3/StackDataType/obj/Debug/net5.0/StackDataType.GeneratedMSBuildEditorConfig.editorconfig
+Homework5/.vs/Homework5/v16/.suo
+Homework5/Employees/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+Homework5/Employees/obj/Debug/net5.0/Employees.AssemblyInfo.cs
+Homework5/Employees/obj/Debug/net5.0/Employees.GeneratedMSBuildEditorConfig.editorconfig
+Homework5/ISBNbook/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+Homework5/ISBNbook/obj/Debug/net5.0/ISBNbook.AssemblyInfo.cs
+*.editorconfig
+Homework5/SparseMatrix/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+Homework5/SparseMatrix/obj/Debug/net5.0/SparseMatrix.AssemblyInfo.cs
+*.txt
+Homework5/SparseMatrix/obj/Debug/net5.0/SparseMatrixOperations.AssemblyInfo.cs
+Homework5/Employees/obj/Debug/net5.0/Vacations.AssemblyInfo.cs
