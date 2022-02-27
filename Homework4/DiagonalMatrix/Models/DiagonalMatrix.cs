@@ -1,12 +1,11 @@
 ﻿using System;
+using DiagonalMatrix.EventArguments;
 
 namespace DiagonalMatrix
 {
     public class DiagonalMatrix<T>
     {
-        public delegate void ElementHandler(int indexI, int indexJ, T oldValue, T newValue);
-
-        public event ElementHandler ElementChanged;
+        public event EventHandler<MatrixElementChangedArgs<T>> ElementChanged;
 
         private T[] DiagonalElements { get; }
         public readonly int Size;
@@ -48,7 +47,7 @@ namespace DiagonalMatrix
 
                 if (ElementChanged != null && !(oldValue.Equals(value))) // Event occuring.
                 {
-                    ElementChanged(i, j, oldValue, value);
+                    ElementChanged?.Invoke(this, new MatrixElementChangedArgs<T>(i, j, oldValue, value));
                 }
             }
         }

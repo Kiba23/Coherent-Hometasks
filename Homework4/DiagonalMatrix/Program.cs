@@ -40,6 +40,15 @@ namespace DiagonalMatrix
             matrix2Tracker.Undo();
             Console.WriteLine($"Undo operation - {matrix2}");
             #endregion
+
+
+            #region Exceptional case test when matrix elements wasn't changed
+            var matrix5 = new DiagonalMatrix<float>(1.5f, 2.0f);
+            var matrixTrackerTest = new MatrixTracker<float>(matrix5);
+            matrixTrackerTest.Undo(); // Handling this case, value of [0,0] sets to zero.
+
+            Console.WriteLine($"Exceptional Undo operation - {matrix5}");
+            #endregion
         }
 
         static T NumericalAddition<T>(T element1, T element2) // Only for addition between number types.
