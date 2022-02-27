@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace ISBNbook.Models
 {
     public class Book
     {
-        private string Title;
-        private DateTime? PublicationDate;
-        private List<string> Authors;
+        private string Title { get; }
+        private DateTime? PublicationDate { get; }
+        private HashSet<string> Authors { get; }
 
 
-        public Book(string title, DateTime? publicationDate, params string[] authors)
+        public Book(string title, DateTime? publicationDate, HashSet<string> authors)
         {
             if (!String.IsNullOrEmpty(title))
             {
@@ -21,13 +22,18 @@ namespace ISBNbook.Models
                 throw new ArgumentNullException("Title coldn't be null or empty.");
             }
             PublicationDate = publicationDate;
-            Authors = new List<string>();
-            Authors.AddRange(authors);
+            Authors = authors;
         }
 
         public override string ToString()
         {
-            return $"Book title - {Title}, Publication date - {PublicationDate}, Main author - {Authors[0]}";
+            StringBuilder result = new StringBuilder($"Book title - {Title}, Publication date - {PublicationDate.Value.ToShortDateString()}, Authors - ");
+
+            foreach (var item in Authors)
+            {
+                result.Append(item + "; ");
+            }
+            return result.ToString();
         }
     }
 }

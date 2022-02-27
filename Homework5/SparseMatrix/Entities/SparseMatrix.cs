@@ -7,15 +7,15 @@ namespace SparseMatrixOperations.Entities
 {
     public class SparseMatrix : IEnumerable<int>
     {
-        private Dictionary<(int Column, int Row), int> MatrixElements = new Dictionary<(int, int), int>();
-        private (int Columns, int Rows) Size;
+        private Dictionary<(int Column, int Row), int> matrixElements = new Dictionary<(int, int), int>();
+        private (int Columns, int Rows) size;
 
 
         public SparseMatrix(int columns, int rows)
         {
             if (columns > 0 && rows > 0)
             {
-                Size = (columns, rows);
+                size = (columns, rows);
             }
             else
             {
@@ -35,20 +35,27 @@ namespace SparseMatrixOperations.Entities
                 }
 
                 var elementIndex = (col, row);
-                return MatrixElements.First(e => e.Key.Equals(elementIndex)).Value; // returning the value at corresponding indexes
+                return matrixElements[elementIndex]; // returning the value at corresponding indexes
             }
             set
             {
                 InputDimensionCheck(col, row);
 
                 var elementIndex = (col, row);
-                MatrixElements.Add(elementIndex, value);
+                if (value != 0 && matrixElements.ContainsKey(elementIndex))
+                {
+                    matrixElements[elementIndex] = value;
+                }
+                else if (value != 0)
+                {
+                    matrixElements.Add(elementIndex, value);
+                }
             }
         }
 
         private bool InputDimensionCheck(int col, int row)
         {
-            if (col >= 0 && col < Size.Columns && row >= 0 && row < Size.Rows)
+            if (col >= 0 && col < size.Columns && row >= 0 && row < size.Rows)
             {
                 return true;
             }
@@ -62,17 +69,17 @@ namespace SparseMatrixOperations.Entities
         {
             if (x == 0)
             {
-                return Size.Columns * Size.Rows - MatrixElements.Values.Count;
+                return size.Columns * size.Rows - matrixElements.Values.Count;
             }
 
-            return MatrixElements.Values.Where(v => v == x).Count();
+            return matrixElements.Values.Where(v => v == x).Count();
         }
 
         public IEnumerable<(int, int, int)> GetNotZeroElements()
         {
-            for (int i = 0; i < Size.Columns; i++)
+            for (int i = 0; i < size.Columns; i++)
             {
-                for (int j = 0; j < Size.Rows; j++)
+                for (int j = 0; j < size.Rows; j++)
                 {
                     if (!IsZeroElement(i, j))
                     {
@@ -85,7 +92,7 @@ namespace SparseMatrixOperations.Entities
         private bool IsZeroElement(int col, int row)
         {
             var elementIndex = (col, row);
-            if (MatrixElements.Any(e => e.Key.Equals(elementIndex))) // case when there is no element in such indexes, so the value is zero
+            if (matrixElements.Any(e => e.Key.Equals(elementIndex))) // case when there is no element in such indexes, so the value is zero
             {
                 return false;
             }
@@ -94,9 +101,9 @@ namespace SparseMatrixOperations.Entities
 
         public IEnumerator<int> GetEnumerator()
         {
-            for (int i = 0; i < Size.Columns; i++) 
+            for (int i = 0; i < size.Columns; i++) 
             {
-                for (int j = 0; j < Size.Rows; j++)
+                for (int j = 0; j < size.Rows; j++)
                 {
                     yield return this[i, j];
                 }
@@ -105,23 +112,17 @@ namespace SparseMatrixOperations.Entities
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            for (int i = 0; i < Size.Columns; i++)
-            {
-                for (int j = 0; j < Size.Rows; j++)
-                {
-                    yield return this[i, j].ToString();
-                }
-            }
+            return GetEnumerator();
         }
 
         public override string ToString()
         {
             string result = "\n";
-            foreach (var item in MatrixElements)
+            foreach (var item in matrixElements)
             {
                 result += "Element at " + item.Key.Column + "," + item.Key.Row + " is " + item.Value + "\n";
             }
-            return result + "of the matrix size - " + Size.Columns + "x" + Size.Rows;
+            return result + "of the matrix size - " + size.Columns + "x" + size.Rows;
         }
     }
 }

@@ -30,6 +30,11 @@ namespace Vacations.Models
             }
         }
 
+        public double GetDaysOfVacation()
+        {
+            return (EndVacation - StartVacation).TotalDays;
+        }
+
         public override string ToString()
         {
             return $"{Name} was on vacation from {StartVacation.ToShortDateString()} to {EndVacation.ToShortDateString()}";

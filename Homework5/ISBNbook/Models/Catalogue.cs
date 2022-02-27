@@ -7,14 +7,18 @@ namespace ISBNbook.Models
 {
     public class Catalogue
     {
-        private Dictionary<string, Book> BookCollection = new Dictionary<string, Book>();
+        private Dictionary<string, Book> bookCollection = new Dictionary<string, Book>();
 
 
         public void AddBook(Book book, string isbn)
         {
-            if (IsFormatCorrect(isbn))
+            if (IsFormatCorrect(isbn) && bookCollection.ContainsKey(isbn))
             {
-                BookCollection.Add(ToDefaultFormat(isbn), book);
+                bookCollection[isbn] = book;
+            }
+            else if (IsFormatCorrect(isbn))
+            {
+                bookCollection.Add(ToDefaultFormat(isbn), book);
             }
             else
             {
@@ -26,9 +30,9 @@ namespace ISBNbook.Models
         {
             if (IsFormatCorrect(isbn))
             {
-                if (BookCollection.Any(b => b.Key == ToDefaultFormat(isbn)))
+                if (bookCollection.Any(b => b.Key == ToDefaultFormat(isbn)))
                 {
-                    return BookCollection.First(b => b.Key == ToDefaultFormat(isbn)).Value;
+                    return bookCollection.First(b => b.Key == ToDefaultFormat(isbn)).Value;
                 }
                 else
                 {

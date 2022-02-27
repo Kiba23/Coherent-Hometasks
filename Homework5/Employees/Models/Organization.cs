@@ -29,27 +29,17 @@ namespace Vacations.Models
 
         public TimeSpan GetAverageVacation()
         {
-            TimeSpan result = default(TimeSpan);
-            foreach (var vacation in Vacations)
-            {
-                result += vacation.VacationPeriod;
-            }
-            return result / Vacations.Count;
+            return TimeSpan.FromDays(Vacations.Average(v => v.GetDaysOfVacation()));
         }
 
         public IEnumerable<(string Name, TimeSpan AvgVacation)> GetAvgVacationPerEmployee()
         {
-            var totalVacationOfPerson = Vacations.GroupBy(v => v.Name);
+            var avgVacationForEmployee = Vacations.GroupBy(employee => employee.Name, vacation => vacation.GetDaysOfVacation())
+                .Select(employeeVacation => (employeeVacation.Key, employeeVacation.Average()));
 
-            TimeSpan summedVacationTime = default(TimeSpan);
-            foreach (var person in totalVacationOfPerson)       // iterating through employees (persons)
+            foreach (var item in avgVacationForEmployee)
             {
-                foreach (var vacation in person)                // iterating through vacations
-                {
-                    summedVacationTime += vacation.VacationPeriod;
-                }
-                yield return (person.Key, summedVacationTime / person.Count());
-                summedVacationTime = default(TimeSpan);         // setting sum to zero again, for a new person
+                yield return (item.Key, TimeSpan.FromDays(item.Item2));
             }
         }
 
